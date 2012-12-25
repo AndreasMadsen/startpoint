@@ -1,0 +1,29 @@
+{
+  "name": "startpoint",
+  "description": "stream v2 compatible single buffer to stream module",
+  "version": "0.2.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "main": "./startpoint.js",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/startpoint.git"
+  },
+  "keywords": [
+    "startpoint",
+    "stream",
+    "buffer",
+    "convert",
+    "stream2"
+  ],
+  "devDependencies": {
+    "tap": "0.3.x"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "0.10 || 0.9",
+    "npm": "1"
+  }
+}
