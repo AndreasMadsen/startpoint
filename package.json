@@ -1,7 +1,7 @@
 {
   "name": "startpoint",
   "description": "stream v2 compatible single buffer to stream module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./startpoint.js",
   "scripts": {
