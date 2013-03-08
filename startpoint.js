@@ -26,7 +26,7 @@ util.inherits(Startpoint, stream.Readable);
 
 Startpoint.prototype._read = function (size, callback) {
   if (this.error) {
-    callback(this.error, null);
+    this.emit('error', this.error);
     this.emit('close');
     return;
   }
@@ -38,7 +38,7 @@ Startpoint.prototype._read = function (size, callback) {
 
   // if there are no more data to read, send nul
   if (this.position === this.buffer.length) {
-    callback(null, null);
+    this.push(null);
     this.emit('close');
     return;
   }
@@ -49,5 +49,5 @@ Startpoint.prototype._read = function (size, callback) {
 
   // no there is no delay here, if that is needed
   // use another stream module to create that delay.
-  callback(null, buffer);
+  this.push(buffer);
 };
