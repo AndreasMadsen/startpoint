@@ -1,6 +1,6 @@
 #startpoint
 
-> stream v2 compatible single buffer to stream module
+> Converts a single buffer or array of objects intro a stream
 
 ## Installation
 
@@ -10,8 +10,8 @@ npm install startpoint
 
 ## Documentation
 
-`startpoint` is a `ReadStream` there converts a buffer to a stream, it also
-emits an error if that was passed to it.
+`startpoint` is a `ReadStream` there converts a buffer or array of objects intro
+a stream, it also emits an error if that was passed to it.
 
 ```JavaScript
   var fs = require('fs';
@@ -20,6 +20,8 @@ emits an error if that was passed to it.
   startpoint(new Buffer('written to file')).pipe(fs.createWriteStream('file.txt'));
 
   startpoint(new Error('ups, an error')).pipe(/* Error handling stream */);
+
+  startpoint([{msg: 'Hallo'}, {msg: 'World'}], {objectMode: true}).pipe(/* Object stream */);
 ```
 
 ##License

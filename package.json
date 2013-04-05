@@ -1,6 +1,6 @@
 {
   "name": "startpoint",
-  "description": "stream v2 compatible single buffer to stream module",
+  "description": "Converts a single buffer or array of objects intro a stream",
   "version": "0.2.1",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./startpoint.js",
