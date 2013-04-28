@@ -48,6 +48,7 @@ test('simple read and end using object array', function (t) {
   t.deepEqual(point.read(), [2]);
   t.deepEqual(point.read(), [3]);
   t.equal(point.read(), null);
+  t.deepEqual(array, [[1], [2], [3]]);
 
   t.end();
 });

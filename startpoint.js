@@ -2,6 +2,14 @@
 var stream = require('stream');
 var util = require('util');
 
+function copyArray(input) {
+  var output = new Array(input.length);
+  for (var i = 0, l = input.length; i < l; i++) {
+    output[i] = input[i];
+  }
+  return output;
+}
+
 function Startpoint(input, options) {
   if (!(this instanceof Startpoint)) return new Startpoint(input, options);
 
@@ -14,7 +22,10 @@ function Startpoint(input, options) {
   if (input instanceof Error) {
     this._error = input;
     this._data = null;
-  } else if (this._objectMode || Buffer.isBuffer(input)) {
+  } else if (this._objectMode) {
+    this._error = null;
+    this._data = copyArray(input);
+  } else if (Buffer.isBuffer(input)) {
     this._error = null;
     this._data = input;
   } else {
